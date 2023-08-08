@@ -1,64 +1,4 @@
-// Include the AWS SDK for JavaScript
-var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
-
-// Initialize the Cognito User Pool and User Pool Client
-var poolData = {
-    UserPoolId : 'us-east-1_aKCub8FPr', 
-    ClientId : '6ftutv39dofol81fu9dpe74l47' 
-};
-var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
-// Function to sign up a new user
-function signUp(username, password, email) {
-    var attributeList = [];
-    var dataEmail = {
-        Name : 'email',
-        Value : email
-    };
-    var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
-    attributeList.push(attributeEmail);
-
-    userPool.signUp(username, password, attributeList, null, function(err, result){
-        if (err) {
-            alert(err.message || JSON.stringify(err));
-            return;
-        }
-        var cognitoUser = result.user;
-        console.log('user name is ' + cognitoUser.getUsername());
-    });
-}
-
-// Function to sign in a user
-function signIn(username, password) {
-    var authenticationData = {
-        Username : username,
-        Password : password,
-    };
-    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-    var userData = {
-        Username : username,
-        Pool : userPool
-    };
-    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-    cognitoUser.authenticateUser(authenticationDetails, {
-        onSuccess: function (session) {
-            console.log('authentication successful', session);
-        },
-        onFailure: function(err) {
-            alert(err.message || JSON.stringify(err));
-        }
-    });
-}
-
-// Function to sign out a user
-function signOut() {
-    var cognitoUser = userPool.getCurrentUser();
-    if (cognitoUser) {
-        cognitoUser.signOut();
-    }
-}
-
-var url_aws = " https://btrelvzs9c.execute-api.us-east-1.amazonaws.com/BMI";
+var url_aws = "https://tl9dh07xkc.execute-api.us-east-1.amazonaws.com/V1";
 
 let loadPage = function () {
     $("#addItemForm").css("display", "none");
@@ -239,6 +179,4 @@ function wait(ms) {
 }
 
 $(document).ready(loadPage);
-
-
 
