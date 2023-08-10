@@ -1,99 +1,89 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <link rel="shortcut icon" href="BMI.jpg">
-  <link rel="stylesheet" type="text/css" href="index.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="index.js"></script>
+    <link rel="shortcut icon" href="BMI.jpg">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body class="center">
-  </p>
-  <h1>BMI- Body Mass Index</h1>
-  </p>
-  </p>
-  <div class="divbutton">
-    <button id="addItem"> add item</button>
-    <button id="removeItem"> remove item</button>
-    <button id="updateItem"> update item</button>
-    <p></p>
-    <div id="addItemDiv">
-      <form id="addItemForm" name="addItemForm" method="POST">
-        <!-- User name -->
-        <div id="div-user" class="div-user">
-          <label for="userName">Name&nbsp</label>
-          <input type="string" class="form-control" name="userName" id="userName" placeholder="write name" required>
+    <h1>BMI- Body Mass Index</h1>
+
+    <div class="divbutton">
+        <button id="addItem"> add item</button>
+        <button id="removeItem"> remove item</button>
+        <button id="updateItem"> update item</button>
+
+        <div id="addItemDiv">
+            <form id="addItemForm" name="addItemForm" method="POST">
+                <!-- User name -->
+                <div id="div-user-add" class="div-user">
+                    <label for="userName">Name&nbsp</label>
+                    <input type="string" class="form-control" name="userName" id="userName" placeholder="write name" required>
+                </div>
+
+                <!-- Weight -->
+                <div id="div-weight-add" class="div-weight">
+                    <label for="weight">Weight</label>
+                    <input type="number" min=3 class="form-control" name="weight" id="weight"
+                        placeholder="write weight in kg here" required>
+                </div>
+
+                <!-- Height -->
+                <div id="div-height-add" class="div-height">
+                    <label for="height">Height</label>
+                    <input type="number" min=30 class="form-control" name="height" id="height"
+                        placeholder="write height in cm here" required>
+                </div>
+
+                <button type="submit" id="submitAdd">Submit</button>
+            </form>
         </div>
 
-        <!-- Weight -->
-        <div id="div-weight" class="div-weight">
-          <label for="weight">Weight</label>
-          <input type="number" min=3 class="form-control" name="weight" id="weight"
-            placeholder="write weight in kg here" required>
+        <div id="removeItemDiv">
+            <form id="removeItemForm" name="removeItemForm" method="POST">
+                <!-- User name -->
+                <div id="div-user-remove" class="div-user">
+                    <label for="userNameRemove">Name</label>
+                    <input type="string" class="form-control" name="userNameRemove" id="userNameRemove" placeholder="write name"
+                        required>
+                </div>
+
+                <button type="submit" id="submitRemove">Submit</button>
+            </form>
         </div>
 
-        <!-- Height -->
-        <div id="div-height" class="div-height">
-          <label for="height">Height</label>
-          <input type="number" min=30 class="form-control" name="height" id="height"
-            placeholder="write height in cm here" required>
+        <div id="updateItemDiv">
+            <form id="updateItemForm" name="updateItemForm" method="POST">
+                <!-- User name -->
+                <div id="div-user-update" class="div-user">
+                    <label for="userNameUpdate">Name&nbsp</label>
+                    <input type="string" class="form-control" name="userNameUpdate" id="userNameUpdate" placeholder="write name"
+                        required>
+                </div>
+
+                <!-- Weight -->
+                <div id="div-weight-update" class="div-weight">
+                    <label for="weightUpdate">Weight</label>
+                    <input type="number" min=3 class="form-control" name="weightUpdate" id="weightUpdate"
+                        placeholder="write weight in kg here" required>
+                </div>
+
+                <!-- Height -->
+                <div id="div-height-update" class="div-height">
+                    <label for="heightUpdate">Height</label>
+                    <input type="number" min=30 class="form-control" name="heightUpdate" id="heightUpdate"
+                        placeholder="write height in cm here" required>
+                </div>
+
+                <button type="submit" id="submitUpdate">Submit</button>
+            </form>
         </div>
-        <p>
-
-          <button type="submit" id="submit">Submit</button>
-
-      </form>
     </div>
-    <div id="removeItemDiv">
-      <form id="removeItemForm" name="removeItemForm" method="POST">
-        <!-- User name -->
-        <div id="div-user" class="div-user">
-          <label for="userNameRemove">Name</label>
-          <input type="string" class="form-control" name="userNameRemove" id="userNameRemove" placeholder="write name"
-            required>
-        </div>
-        </p>
-        <button type="submit" id="submit">Submit</button>
-      </form>
-    </div>
-    <div id="updateItemDiv">
-      <form id="updateItemForm" name="updateItemForm" method="POST">
-        <!-- User name -->
-        <div id="div-user" class="div-user">
-          <label for="userNameUpdate">Name&nbsp</label>
-          <input type="string" class="form-control" name="userNameUpdate" id="userNameUpdate" placeholder="write name"
-            required>
-        </div>
 
-        <!-- Weight -->
-        <div id="div-weight" class="div-weight">
-          <label for="weightUpdate">Weight</label>
-          <input type="number" min=3 class="form-control" name="weightUpdate" id="weightUpdate"
-            placeholder="write weight in kg here" required>
-        </div>
-
-        <!-- Height -->
-        <div id="div-height" class="div-height">
-          <label for="heightUpdate">Height</label>
-          <input type="number" min=30 class="form-control" name="heightUpdate" id="heightUpdate"
-            placeholder="write height in cm here" required>
-        </div>
-        </p>
-
-        <button type="submit" id="submit">Submit</button>
-
-      </form>
-    </div>
-    </p>
-
-  </div>
-  <p></p>
-  <div id="table">
-  </div>
-
-
+    <div id="table"></div>
 </body>
 
 </html>
