@@ -59,7 +59,8 @@ button:hover {
 }
 
 .div-user,
-.div-height {
+.div-height,
+.div-weight {
     display: inline-block;
     margin-bottom: 5px;
     margin-top: 5px;
