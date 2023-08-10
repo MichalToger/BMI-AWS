@@ -1,5 +1,4 @@
-var url_aws = "https://il192mkkvi.execute-api.us-east-1.amazonaws.com/BMID";
-
+var url_aws = "https://tl9dh07xkc.execute-api.us-east-1.amazonaws.com/V1";
 
 let loadPage = function () {
     $("#addItemForm").css("display", "none");
