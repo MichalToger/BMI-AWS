@@ -1,29 +1,66 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-h2 {
+.center {
     text-align: center;
+    background-color: beige;
 }
 
-#bmi-table {
-    width: 100%;
+.right {
+    text-align: right;
+}
+
+ul,
+ol {
+    display: inline-block;
+}
+
+table,
+th,
+td {
+    border: 3px solid rgb(71, 107, 185);
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
-#bmi-table th, #bmi-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+th {
+    background-color: rgb(91, 117, 206);
+    color: white;
+}
+
+.divbutton button {
+    background-color: rgb(91, 117, 206);
+    border: 1px solid rgb(71, 107, 185);
+    color: white;
+    padding: 10px 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divbutton {
     text-align: center;
 }
 
-#bmi-table th {
-    background-color: #f2f2f2;
+button:after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-#add-record {
-    margin-top: 20px;
-    text-align: center;
+button:not(:last-child) {
+    border-right: none;
+}
+
+button:hover {
+    background-color: rgb(55, 91, 169);
+}
+
+.div-user,
+.div-height {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
