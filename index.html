@@ -1,35 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Records</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div id="bmi-section" style="display: none;">
-        <h2>Your BMI Records</h2>
-        <table id="bmi-table">
-            <thead>
-                <tr>
-                    <th>Height (cm)</th>
-                    <th>Weight (kg)</th>
-                    <th>BMI</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- BMI records will be populated here -->
-            </tbody>
-        </table>
+<html>
 
-        <div id="add-record">
-            <input type="number" id="height-input" placeholder="Height in cm">
-            <input type="number" id="weight-input" placeholder="Weight in kg">
-            <button onclick="addRecord()">Add Record</button>
+<head>
+    <title>BMI Calculator</title>
+    <link rel="shortcut icon" href="BMI.jpg">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body class="center">
+    <h1>BMI- Body Mass Index</h1>
+
+    <div class="divbutton">
+        <button id="addItem">Add Item</button>
+        <button id="removeItem">Remove Item</button>
+        <button id="updateItem">Update Item</button>
+
+        <div id="addItemDiv">
+            <form id="addItemForm" name="addItemForm" method="POST">
+                <div id="div-user" class="div-user">
+                    <label for="userName">Name&nbsp</label>
+                    <input type="string" class="form-control" name="userName" id="userName" placeholder="write name" required>
+                </div>
+
+                <div id="div-weight" class="div-weight">
+                    <label for="weight">Weight</label>
+                    <input type="number" min=3 class="form-control" name="weight" id="weight" placeholder="write weight in kg here" required>
+                </div>
+
+                <div id="div-height" class="div-height">
+                    <label for="height">Height</label>
+                    <input type="number" min=30 class="form-control" name="height" id="height" placeholder="write height in cm here" required>
+                </div>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="removeItemDiv">
+            <form id="removeItemForm" name="removeItemForm" method="POST">
+                <div id="div-user" class="div-user">
+                    <label for="userNameRemove">Name</label>
+                    <input type="string" class="form-control" name="userNameRemove" id="userNameRemove" placeholder="write name" required>
+                </div>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="updateItemDiv">
+            <form id="updateItemForm" name="updateItemForm" method="POST">
+                <div id="div-user" class="div-user">
+                    <label for="userNameUpdate">Name&nbsp</label>
+                    <input type="string" class="form-control" name="userNameUpdate" id="userNameUpdate" placeholder="write name" required>
+                </div>
+
+                <div id="div-weight" class="div-weight">
+                    <label for="weightUpdate">Weight</label>
+                    <input type="number" min=3 class="form-control" name="weightUpdate" id="weightUpdate" placeholder="write weight in kg here" required>
+                </div>
+
+                <div id="div-height" class="div-height">
+                    <label for="heightUpdate">Height</label>
+                    <input type="number" min=30 class="form-control" name="heightUpdate" id="heightUpdate" placeholder="write height in cm here" required>
+                </div>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <div id="table"></div>
 </body>
+
 </html>
