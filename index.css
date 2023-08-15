@@ -1,67 +1,26 @@
-.center {
-    text-align: center;
-    background-color: beige;
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
-.right {
-    text-align: right;
-}
-
-ul,
-ol {
-    display: inline-block;
-}
-
-table,
-th,
-td {
-    border: 3px solid rgb(71, 107, 185);
+table {
+    width: 100%;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    text-align: left;
-    padding: 15px;
-    border-collapse: collapse;
-    table-layout: fixed;
 }
 
-th {
-    background-color: rgb(91, 117, 206);
-    color: white;
+table, th, td {
+    border: 1px solid black;
 }
 
-.divbutton button {
-    background-color: rgb(91, 117, 206);
-    border: 1px solid rgb(71, 107, 185);
-    color: white;
-    padding: 10px 24px;
-    margin-left: auto;
-    margin-right: auto;
+th, td {
+    padding: 8px 12px;
 }
 
-.divbutton {
-    text-align: center;
+#add-record {
+    margin-top: 20px;
 }
 
-button:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-button:not(:last-child) {
-    border-right: none;
-}
-
-button:hover {
-    background-color: rgb(55, 91, 169);
-}
-
-.div-user,
-.div-height,
-.div-weight {
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-top: 5px;
+input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
 }
