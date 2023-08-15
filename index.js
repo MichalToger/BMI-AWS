@@ -2,8 +2,15 @@ const API_BASE_URL = "https://p8j9kem4pj.execute-api.us-east-1.amazonaws.com/pro
 const COGNITO_URL = "https://bmi-login.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=6drqnkmsb5r45492kg3mm034m8&redirect_uri=https://bmi-website-storage.s3-website-us-east-1.amazonaws.com";
 
 function fetchAllRecords() {
-    // Fetch all BMI records for the logged-in user
-    // This will be implemented after user login is set up
+    fetch(API_BASE_URL + '/fetchallrecords')
+    .then(response => response.json())
+    .then(data => {
+        // Process and display the data on your page
+        // For example, populate the 'bmi-table' with the fetched records
+    })
+    .catch(error => {
+        console.error('Error fetching BMI records:', error);
+    });
 }
 
 function addRecord() {
